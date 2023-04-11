@@ -6,5 +6,7 @@
 Решение второго задания:
 
 SELECT products_name, categorie_name
+
 FROM products
+
 LEFT JOIN product_categories ON products.id = product_categories.product_id
