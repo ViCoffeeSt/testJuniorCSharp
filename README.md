@@ -13,7 +13,7 @@
 
 Решение второго задания:
 
-SELECT products_name, categorie_name
+SELECT products_name, categories_name
 
 FROM products
 
