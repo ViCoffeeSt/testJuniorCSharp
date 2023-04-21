@@ -1,5 +1,7 @@
-SELECT products_name, categories_name
+SELECT Products.ProductName, Categories.CategoryName
+FROM Products
+LEFT OUTER JOIN Product_Category
+ON Products.ProductID = Product_Category.ProductID
+LEFT OUTER JOIN Categories
+ON Product_Category.CategoryID = Categories.CategoryID
 
-FROM products
-
-LEFT JOIN product_categories ON products.id = product_categories.product_id
