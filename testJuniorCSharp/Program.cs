@@ -8,6 +8,28 @@ namespace GeometryLibrary
 {
     public static class Geometry
     {
+        public static double CalculateArea(params double[] sides)
+        {
+            switch (sides.Length)
+            {
+                case 1:
+                    return CalculateCircleArea(sides[0]);
+
+                case 3:
+                    if (IsRightTriangle(sides[0], sides[1], sides[2]))
+                    {
+                        return CalculateTriangleArea(sides[0], sides[1], sides[2]) / 2;
+                    }
+                    else
+                    {
+                        return CalculateTriangleArea(sides[0], sides[1], sides[2]);
+                    }
+
+                default:
+                    throw new ArgumentException("Invalid number of sides");
+            }
+        }
+        
         public static double CalculateCircleArea(double radius)
         {
             return Math.PI * radius * radius;
