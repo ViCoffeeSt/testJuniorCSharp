@@ -15,6 +15,9 @@ namespace GeometryLibrary
                 case 1:
                     return CalculateCircleArea(sides[0]);
 
+                case 2:
+                    return CalculateRectangleArea(sides[0], sides[1]);
+
                 case 3:
                     if (IsRightTriangle(sides[0], sides[1], sides[2]))
                     {
@@ -29,7 +32,7 @@ namespace GeometryLibrary
                     throw new ArgumentException("Invalid number of sides");
             }
         }
-        
+
         public static double CalculateCircleArea(double radius)
         {
             return Math.PI * radius * radius;
@@ -46,6 +49,11 @@ namespace GeometryLibrary
             double[] sides = { side1, side2, side3 };
             Array.Sort(sides);
             return sides[2] * sides[2] == sides[0] * sides[0] + sides[1] * sides[1];
+        }
+
+        public static double CalculateRectangleArea(double length, double width)
+        {
+            return length * width;
         }
     }
 }
